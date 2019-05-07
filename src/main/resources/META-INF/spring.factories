@@ -1,0 +1,3 @@
+# 此文件慎重编写拼写错误 无法 产生正常报错，不提示自动配置失败，
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.cf.demos.myDemo.ExampleAutoConfigure

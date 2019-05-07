@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.cf.demos</groupId>
+	<artifactId>staterDemo</artifactId>
+	<version>1.1</version>
+	<name>staterDemo</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+			<version>2.1.3.RELEASE</version>
+		</dependency>
+	</dependencies>
+	<!--
+	更新本地仓库
+	mvn  clean package install
+	更新远程仓库
+	mvn clean package deploy
+	-->
+	<distributionManagement>
+		<repository><!--releases-->
+			<id>localRepository</id>
+			<url>file:D:\ProgramFiles\localRepository</url>
+		</repository>
+		<snapshotRepository><!--快照版本-->
+			<id>localRepository</id>
+			<url>file:D:\ProgramFiles\localRepository</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<outputDirectory></outputDirectory>
+					<!--Directory containing the classes and resource files that should be packaged into the JAR.-->
+					<classesDirectory>
+						target/classes
+					</classesDirectory>
+					<excludes>
+						<exclude>
+						</exclude>
+					</excludes>
+					<!--<archive>
+						归档 生成文档的配置 此次表示不要 自动生成 meta-inf文件夹
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
